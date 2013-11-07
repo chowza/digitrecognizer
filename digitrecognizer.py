@@ -28,7 +28,7 @@ with open("train.csv","r") as f:
 testx = []
 
 # Add the features of the test sample into the above array
-with open("digitrecognizertest.csv","r") as t:
+with open("test.csv","r") as t:
 	next(t)
 	for line in t:
 		testx.append(line.replace("\n","").split(","))
