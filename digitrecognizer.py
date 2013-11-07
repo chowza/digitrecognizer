@@ -56,8 +56,8 @@ pred = knn.predict(XTest)
 # YTest = np.array(x[30000:])
 # knn.fit(XTrain,YTrain).score(XTest,YTest)
 #
-# This would have output 0.96633333333333338, which is to say that it estimated 96.63333...%
-# There was a total of 42000 training samples so since if I split it into 30,000 and 12,000 
+# This would have output 0.96633333333333338, which is to say that it estimated ~96.63% correctly.
+# There was a total of 42000 training samples so since I split it into 30,000 and 12,000 
 # as above, that means this classifier correctly predicted 11596 of the 12000 digits.
 
 # The Kaggle competition requires that you write it to a CSV file before submitting
@@ -67,6 +67,6 @@ f = open("predictions.csv","w")
 f.write('ImageId,Label\n")
 
 for i in range(0,28000):
-	f.write(str(i)+","+str(pred[i])+"\n")
+	f.write(str(i+1)+","+str(pred[i])+"\n")
 
 f.close()
